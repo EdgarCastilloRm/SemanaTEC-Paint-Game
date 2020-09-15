@@ -29,16 +29,14 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
+def circlefunc(start, end):
     "Draw circle from start to end."
     up()
     goto(start.x, start.y)
     down()
     begin_fill()
 
-    for count in range(360):
-        forward((end.x - start.x)/60)
-        left(1)
+    circle(end.x - start.x)
 
     end_fill()
     
@@ -99,7 +97,7 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circlefunc), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
